@@ -1,13 +1,27 @@
 from .table import Client, client_schema, db
-
-def exist(data):
+import datetime
     
-    client = Client.query.filter(Client.name == data['email']).one()
+def exist_or_get(key, value):
     
-    if not client:
-        return False
+    match key:
+        
+        case "email":
+            client = Client.query.filter(Client.email == value).first()
+            
+        case  "id":
+            client = Client.query.filter(Client.id == value).first()
+        
+        case "name":
+            client = Client.query.filter(Client.name == value).first()
+            
+        case _:
+            return None
     
-    return True
+    if client is not None:
+        return client
+    
+    
+    return None
     
 
 def create(data):
@@ -20,3 +34,25 @@ def create(data):
     response = client_schema.dump(client)
     
     return response
+
+def update(data, client):
+    
+    #client = Client.query.get(id)  
+    
+    if data.get("name") is not None:
+        client.name = data["name"]
+        
+    if data.get("email") is not None:
+        client.email = data["email"]
+    
+    db.session.commit()
+    
+    response = client_schema.dump(client)
+    
+    return response
+
+    
+def delete(client):
+
+    db.session.delete(client)
+    db.session.commit()
