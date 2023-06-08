@@ -6,7 +6,7 @@ class Favorite_Product(db.Model):
     
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     client_id = db.Column(db.Integer, db.ForeignKey("client.id"), nullable=False)
-    favorite_product= db.Column(db.JSON)
+    favorite_product = db.Column(db.JSON)
     
 class Favorite_Product_Schema(ma.Schema):
     class Meta:

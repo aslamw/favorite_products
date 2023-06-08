@@ -10,7 +10,7 @@ class Client(db.Model):
     
     date_create = db.Column(db.DateTime, default=datetime.datetime.now())
     
-    favorite = db.relationship("Favorite_Product", cascade="all, delete", backref="client")
+    favorite = db.relationship("Favorite_Product", uselist=False, backref="client", cascade="all, delete-orphan")
     
     def __init__(self, name, email):
         self.name = name
