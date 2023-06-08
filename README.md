@@ -1,8 +1,8 @@
 # Favorite Products
 
-OBS.: Para Rodar o projeto precisa ter docker e docker-compose instalado
+OBS.: Para Rodar o projeto precisa ter docker e docker-compose instalados
 
-## Para inicializar projeto rode os comandos:
+## Para inicializar o projeto, rode os comandos:
 
 ```
     docker-compose build
@@ -25,7 +25,7 @@ OBS.: Para Rodar o projeto precisa ter docker e docker-compose instalado
 
 # Configurando o insomnia
 
-### Crie uma pasta e coloque as rotas nela
+### Crie uma pasta e coloque as rotas 
 ![Captura de tela de 2023-06-08 14-54-28](https://github.com/aslamw/calculate_world_flask/assets/50378596/2c8a990a-c1ac-47ff-ab29-e7e6505a6df7)
 
 ### Configure o Environment
@@ -41,16 +41,16 @@ OBS.: Para Rodar o projeto precisa ter docker e docker-compose instalado
 
 ![Captura de tela de 2023-06-08 14-55-36](https://github.com/aslamw/calculate_world_flask/assets/50378596/9326f967-7e70-4360-bc26-59c7e3518cc4)
 
-## Exemplo da rota de registro do client
+## Exemplo da rota de registro do cliente
 
 ![Captura de tela de 2023-06-08 14-56-04](https://github.com/aslamw/calculate_world_flask/assets/50378596/cb04db6a-4504-4c40-b45f-df091e600cf4)
 
-# OBS.: Para conseguir usar as rotas tem que usar atenticação pelo Headers
+# OBS.: Para conseguir usar as rotas tem que usar autenticação pelo Headers
 
 ![Captura de tela de 2023-06-08 14-56-13](https://github.com/aslamw/calculate_world_flask/assets/50378596/9bcd15a8-1bf1-4a1f-b73e-302999287837)
 
 
-### A unica rota que não precisa do AUTH é a de teste para ver se a API está funcionando
+### A única rota que não precisa do AUTH é a de teste para ver se a API está funcionando
 
 ```http
 http://localhost:7070/
