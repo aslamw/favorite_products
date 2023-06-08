@@ -1,9 +1,6 @@
 from flask import Blueprint, request, jsonify
 from ..Controllers import create_client, update_client, delete_client, get_email, get_id, get_name, get_all_client
 from ..Controllers import auth
-
-from src import cache
-
 import json
 
 
@@ -60,7 +57,6 @@ def route_update_client(client_id:int):
 
     
 @api_client.get("/client/<int:client_id>/")
-@cache.cached()
 @auth
 def get_client(client_id):
     """
@@ -78,7 +74,6 @@ def get_client(client_id):
 
     
 @api_client.get("/client/")
-@cache.cached()
 @auth
 def get_client_by_query():
     """
@@ -125,7 +120,6 @@ def update_delete_client(client_id):
 
     
 @api_client.get("/client/all")
-@cache.cached()
 @auth
 def get_all():
     """

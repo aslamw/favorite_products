@@ -1,8 +1,6 @@
 from flask import Blueprint, request, jsonify
 from ..Controllers import create_favorite_product, add_favorite_product, remove_favorite_product, get_product, get_all_product
-from src import cache
 from ..Controllers import auth
-
 import json
 
 api_favorite = Blueprint('product', __name__)
@@ -72,7 +70,6 @@ def route_remove_favorite(client_id):
 
     
 @api_favorite.get('/product/<int:client_id>/')
-@cache.cached()
 @auth
 def route_get_product(client_id):
     """
@@ -93,7 +90,6 @@ def route_get_product(client_id):
 
     
 @api_favorite.get('/product/all')
-@cache.cached()
 @auth
 def route_get_all():
     """

@@ -1,6 +1,7 @@
 from flask import Flask
 from flask_cors import CORS
 from flask_caching import Cache
+
 from dotenv import load_dotenv
 import os
 
@@ -22,17 +23,16 @@ database = os.getenv("MYSQL_DATABASE")
 port = os.getenv("MYSQL_PORT")
 
 
+
 app.config["SQLALCHEMY_DATABASE_URI"] = f'mysql+pymysql://{user}:{password}@{local}/{database}'
 
 db.init_app(app)
 ma.init_app(app)
 
-
 #config cache
-cache = Cache(app)
-app.config['CACHE_TYPE'] = 'simple'
+cache =Cache(app)
+app.config['CACHE_TY PE'] = 'simple'
 app.config['CACHE_DEFAULT_TIMEOUT'] = 60
-
 
 
 from .Models import Client, Favorite_Product

@@ -30,7 +30,7 @@ services:
     container_name: api_favorite
 
     build: .
-
+    restart: always
     ports:
       - "7070:6060"
 
